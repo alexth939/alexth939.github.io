@@ -4,8 +4,55 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
+
+    <style>
+        .unselectable {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .rounded {
+            border-radius: 10px;
+        }
+
+        .green {
+            background-color: rgb(0, 250, 7);
+        }
+
+        .blue {
+            background-color: rgb(0, 185, 250);
+        }
+
+        .yello {
+            background-color: rgb(255, 220, 26);
+        }
+
+        .pink {
+            background-color: rgb(239, 89, 118);
+        }
+    </style>
+
+    <script>
+        function myFunction() {
+            alert('hello');
+        }
+    </script>
 </head>
 <body>
-    <h1>Hello world! 2nd try</h1>
+    <table align="center" cellspacing="20" cellpadding="5">
+        <!--cellspacing="40">-->
+        <tr style="height:none"><td class="green rounded unselectable" colspan="3" align="center"><h3>Content</h3></td></tr>
+        <tr>
+            <td class="blue rounded unselectable" onclick="document.body.innerHTML += 'string_of_html;'"><h1>wahhssssssssssssssssssssssssssa!</h1></td>
+            <td class="yello rounded unselectable" onmouseover="myFunction()"><h1>wahha!</h1></td>
+            <td class="pink rounded unselectable"><h1>wahha!</h1></td>
+        </tr>
+    </table>
+
+    <div id="content"></div>
 </body>
 </html>
