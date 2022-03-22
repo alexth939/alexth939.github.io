@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <style>
+        /* types: */
+        .contentMenuElement {
+        }
+
+        .contactMenuElement {
+        }
+
+        /* properties:  */
+        .hidable {
+            opacity: 1;
+            transition: visibility 0s, opacity 0.5s linear;
+            transition: all 500ms ease-out;
+        }
+
+        .notselectable {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        /* visual: */
+        .rounded {
+            border-radius: 10px;
+        }
+
+        .centered {
+            text-align: center
+        }
+
+        /* colors: */
+        .green {
+            background-color: rgb(0, 250, 7);
+        }
+
+        .blue {
+            background-color: rgb(0, 185, 250);
+        }
+
+        .yellow {
+            background-color: rgb(255, 220, 26);
+        }
+
+        .pink {
+            background-color: rgb(242, 121, 144);
+        }
+
+        .purple {
+            background-color: rgb(223, 201, 234);
+        }
+    </style>
+
+    <script>
+        function ShowDemo(index) {
+            var demos = document.getElementById('demosMenu').getElementsByClassName('demo');
+            for (i = 0; i < demos.length; i++) {
+                if (i != index)
+                    demos[i].style.display = "none";
+                else
+                    demos[i].style.display = "block";
+            }
+        }
+    </script>
+</head>
+<body>
+    <!--content-->
+    <table>
+        <tr>
+            <td align="left" valign="top" style="width:20%">
+                <h1>JumpinBabies</h1>
+                <h2>Summary:</h2>
+                <p>
+                    Clone of Bouncing Babies (PC Game, 1984)<br>
+                </p>
+                <h2>Platforms:</h2>
+                <p>Android</p>
+                <h2>Contribution:</h2>
+                <p>whole project except sprites and sounds</p>
+                <h2>Last Update:</h2>
+                <p>code refactoring in progress</p>
+                <p><a href="https://github.com/alexth939/Jumpin-Babies" target="_PARENT">on github</a></p>
+            </td>
+            <td style="width:5%">
+                <ul style="list-style-type:circle; float:left; padding:20px; border:groove; height:100%;">
+                    <li onclick="ShowDemo(0)"><a href="#">Demo1</a></li>
+                    <li onclick="ShowDemo(1)"><a href="#">Demo2</a></li>
+                    <li onclick="ShowDemo(2)"><a href="#">Demo2</a></li>
+                </ul>
+            </td>
+            <td id="demosMenu" style="width:60%">
+                <img class="demo" style="width:80%; display:block" src="../pics/JumpinBabies001.jpeg">
+                <img class="demo" style="width:80%; display:block" src="../pics/JumpinBabies002.jpeg">
+                <img class="demo" style="width:80%; display:block" src="../pics/JumpinBabies003.jpeg">
+            </td>
+        </tr>
+    </table>
+    <script>
+        ShowDemo(0);
+    </script>
+</body>
+</html>

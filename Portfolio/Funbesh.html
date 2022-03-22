@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <style>
+        /* types: */
+        .contentMenuElement {
+        }
+
+        .contactMenuElement {
+        }
+
+        /* properties:  */
+        .hidable {
+            opacity: 1;
+            transition: visibility 0s, opacity 0.5s linear;
+            transition: all 500ms ease-out;
+        }
+
+        .notselectable {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        /* visual: */
+        .rounded {
+            border-radius: 10px;
+        }
+
+        .centered {
+            text-align: center
+        }
+
+        /* colors: */
+        .green {
+            background-color: rgb(0, 250, 7);
+        }
+
+        .blue {
+            background-color: rgb(0, 185, 250);
+        }
+
+        .yellow {
+            background-color: rgb(255, 220, 26);
+        }
+
+        .pink {
+            background-color: rgb(242, 121, 144);
+        }
+
+        .purple {
+            background-color: rgb(223, 201, 234);
+        }
+    </style>
+
+    <script>
+        function ShowDemo1() {
+            document.getElementById('demo2').style.display = 'none';
+            document.getElementById('demo1').style.display = 'block';
+        }
+        function ShowDemo2() {
+            document.getElementById('demo1').style.display = 'none';
+            document.getElementById('demo2').style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+    <!--content-->
+    <table>
+        <tr>
+            <td align="left" valign="top" style="width:20%">
+                <h1>Funbesh</h1>
+                <h2>Summary:</h2>
+                <p>
+                    Modification of backgamon game. supports up to<br>
+                    6 players that can play together on lan or vlan.
+                </p>
+                <h2>Platforms:</h2>
+                <p>Android</p>
+                <h2>Contribution:</h2>
+                <p>UI, Game logic, AI, Handmade Client/Server</p>
+                <h2>Last Update:</h2>
+                <p>released beta 0.602b</p>
+                <p><a href="http://funbesh.club" target="_PARENT">homepage</a></p>
+                <p><a href="https://www.facebook.com/FUNBESH/" target="_PARENT">on facebook</a></p>
+            </td>
+            <td style="width:5%">
+                <ul style="list-style-type:circle; float:left; padding:20px; border:groove; height:100%;">
+                    <li onclick="ShowDemo1()"><a href="#">Demo1</a></li>
+                    <li onclick="ShowDemo2()"><a href="#">Demo2</a></li>
+                </ul>
+            </td>
+            <td style="width:60%">
+                <img id="demo1" style="width:80%; display:block" src="https://scontent.ftlv18-1.fna.fbcdn.net/v/t39.30808-6/244261400_385569526561634_9011726388681028692_n.jpg?_nc_cat=105&ccb=1-5&_nc_sid=730e14&_nc_ohc=1ZI_7uUy2PkAX_VU-Nn&_nc_ht=scontent.ftlv18-1.fna&oh=00_AT-Y33H2nF99tvqsi7QLDhcisKGrjkf3O8Jrvn-gzt9rRA&oe=623C9880">
+                <iframe hidden id="demo2" src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FFUNBESH%2Fvideos%2F414748263565140%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

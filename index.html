@@ -6,7 +6,21 @@
     <title></title>
 
     <style>
-        .unselectable {
+        /* types: */
+        .contentMenuElement {
+        }
+
+        .contactMenuElement {
+        }
+
+        /* properties:  */
+        .hidable {
+            opacity: 1;
+            transition: visibility 0s, opacity 0.5s linear;
+            transition: all 500ms ease-out;
+        }
+
+        .notselectable {
             -webkit-touch-callout: none;
             -webkit-user-select: none;
             -khtml-user-select: none;
@@ -15,10 +29,16 @@
             user-select: none;
         }
 
+        /* visual: */
         .rounded {
             border-radius: 10px;
         }
 
+        .centered {
+            text-align: center
+        }
+
+        /* colors: */
         .green {
             background-color: rgb(0, 250, 7);
         }
@@ -27,32 +47,121 @@
             background-color: rgb(0, 185, 250);
         }
 
-        .yello {
+        .yellow {
             background-color: rgb(255, 220, 26);
         }
 
         .pink {
-            background-color: rgb(239, 89, 118);
+            background-color: rgb(242, 121, 144);
+        }
+
+        .purple {
+            background-color: rgb(223, 201, 234);
         }
     </style>
 
     <script>
-        function myFunction() {
-            alert('hello');
+        var projectNames = ['Funbesh', 'JumpinBabies', 'IcyTower', 'SpiderSphere', 'RemoteMusic', 'MotorSphere', 'Balance'];
+
+        function ShowContentElements() {
+            SetActiveMenuElements(1, 0);
+        }
+        function ShowContactElements() {
+            SetActiveMenuElements(0, 1);
+        }
+        function SetActiveMenuElements(content, contact) {
+            var contents = document.getElementsByClassName("contentMenuElement");
+            var contacts = document.getElementsByClassName("contactMenuElement");
+
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].style.opacity = content;
+            }
+            for (var i = 0; i < contacts.length; i++) {
+                contacts[i].style.opacity = contact;
+            }
+        }
+        function getOrientation() {
+            var win = window,
+                doc = document,
+                docElem = doc.documentElement,
+                body = doc.getElementsByTagName('body')[0],
+                x = win.innerWidth || docElem.clientWidth || body.clientWidth,
+                y = win.innerHeight || docElem.clientHeight || body.clientHeight;
+            document.getElementById("orientation").innerHTML = x + 'x' + y;
+        }
+
+        function SelectPortfolioProject(index) {
+            var selectedElementName = projectNames[index];
+            FillNavigatorElements(index, selectedElementName);
+            LoadPortfolioProjectByName(selectedElementName);
+        }
+        function LoadPortfolioProjectByName(name) {
+            document.getElementById("iframe").src = "Portfolio/" + name + ".html";
+        }
+        function FillNavigatorElements(selectedItemIndex, projectName) {
+            var elementsContainer = document.getElementById("navigatorContent");
+            elementsContainer.innerHTML = "";
+
+            for (i = 0; i < projectNames.length; i++) {
+                if (i != selectedItemIndex)
+                    elementsContainer.innerHTML += '<td class="notselectable rounded yellow" align="center" onclick="SelectPortfolioProject(' + i + ')">' + (i + 1) + '</td>';
+                else
+                    elementsContainer.innerHTML += '<td class="notselectable rounded purple" align="center"><h2>' + projectName + '</h2></td>';
+
+            }
         }
     </script>
+
+    <base href="Funbesh.html" target="_parent">
 </head>
-<body>
-    <table align="center" cellspacing="20" cellpadding="5">
-        <!--cellspacing="40">-->
-        <tr style="height:none"><td class="green rounded unselectable" colspan="3" align="center"><h3>Content</h3></td></tr>
+<body style="background-color:ghostwhite;">
+    <table style="width: 100%; background-color:darkblue;">
         <tr>
-            <td class="blue rounded unselectable" onclick="document.body.innerHTML += 'string_of_html;'"><h1>wahhssssssssssssssssssssssssssa!</h1></td>
-            <td class="yello rounded unselectable" onmouseover="myFunction()"><h1>wahha!</h1></td>
-            <td class="pink rounded unselectable"><h1>wahha!</h1></td>
+            <td>
+                <table border="0" align="center" cellspacing="10" cellpadding="5" style="line-height:0">
+                    <tr style="height:none">
+                        <td><!--empty--></td>
+                        <td class="notselectable green  rounded" colspan="2" align="center" onclick="ShowContentElements()"><h1>Content</h1></td>
+                        <td class="notselectable purple rounded" colspan="2" align="center" onclick="ShowContactElements()"><h1>Contact Info</h1></td>
+                    </tr>
+                    <tr>
+                        <!--ContentElements-->
+                        <td class="notselectable hidable blue   rounded centered contentMenuElement" onclick="displayContent()"><h2>Portfolio</h2></td>
+                        <td class="notselectable hidable yellow rounded centered contentMenuElement" onclick="showHide()"><h2>Resume</h2></td>
+                        <td class="notselectable hidable pink   rounded centered contentMenuElement"><h2>Links</h2></td>
+                        <!--ContactElements-->
+                        <td class="notselectable hidable blue   rounded centered contactMenuElement"><h2>Linkedin</h2></td>
+                        <td class="notselectable hidable yellow rounded centered contactMenuElement"><h2>VK</h2></td>
+                        <td class="notselectable hidable pink   rounded centered contactMenuElement"><h2>Gmail</h2></td>
+                    </tr>
+                </table>
+            </td>
         </tr>
     </table>
 
-    <div id="content"></div>
+
+    <div id="content2">Last update 12:07 22/03/22 v0.002</div>
+    <button id="orientation" onclick="getOrientation()">GetOrientation</button>
+
+    <!--navigator-->
+    <table align="center" border="0" cellspacing="2" cellpadding="10" style="line-height:0">
+        <tr id="navigatorContent">
+            <td class="notselectable rounded yellow" align="center">LB</td>
+            <td class="notselectable rounded purple" align="center">
+                <h2 id="projectName">Project Name</h2>
+            </td>
+            <td class="notselectable rounded yellow" align="center">RB</td>
+        </tr>
+    </table>
+
+    <!--content-->
+
+    <iframe src="Portfolio/Funbesh.html" style="height:510px; width: 100%;" frameborder="1" scrolling="no" id="iframe"></iframe>
+    <!--present menu elements-->
+    <script>
+        ShowContentElements();
+        SelectPortfolioProject(0);
+    </script>
+
 </body>
 </html>
