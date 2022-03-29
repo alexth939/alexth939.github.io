@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>MotorTest</title>
+
+    <script>
+        function ShowDemo(index) {
+            var demos = document.getElementById('demosMenu').getElementsByClassName('demo');
+            for (i = 0; i < demos.length; i++) {
+                if (i != index)
+                    demos[i].style.display = "none";
+                else
+                    demos[i].style.display = "block";
+            }
+        }
+    </script>
+</head>
+<body>
+    <!--content-->
+    <table>
+        <tr>
+            <td align="left" valign="top" style="width:20%">
+                <h1>MotorTest</h1>
+
+                <h2>Summary:</h2>
+                <p>
+                    Car physics. inspired by Mad Max (PC Game)
+                </p>
+
+                <h2>Platforms:</h2>
+                <p>PC</p>
+
+                <h2>Contribution:</h2>
+                <p>Model, Physics setup, Gameplay</p>
+
+                <h2>Last Update:</h2>
+                <p>not released</p>
+            </td>
+            <td style="width:5%">
+                <ul style="list-style-type:circle; float:left; padding:20px; border:groove; height:100%;">
+                    <li onclick="ShowDemo(0)"><a href="#">Demo1</a></li>
+                    <li onclick="ShowDemo(1)"><a href="#">Demo2</a></li>
+                </ul>
+            </td>
+            <td id="demosMenu" style="width:60%">
+                <img class="demo" style="width:80%; display:block" src="../pics/MotorTest001.jpg">
+                <iframe class="demo" width="1040" height="585" src="https://www.youtube.com/embed/92G8JPlBxRY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </td>
+        </tr>
+    </table>
+    <script>
+        ShowDemo(0);
+    </script>
+</body>
+</html>

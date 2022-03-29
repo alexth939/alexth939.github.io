@@ -4,54 +4,52 @@
 <head>
     <meta charset="utf-8" />
     <title>Funbesh</title>
-
-    <script>
-        function ShowDemo1() {
-            document.getElementById('demo2').style.display = 'none';
-            document.getElementById('demo1').style.display = 'block';
-        }
-        function ShowDemo2() {
-            document.getElementById('demo1').style.display = 'none';
-            document.getElementById('demo2').style.display = 'block';
-        }
-    </script>
+    <link rel="stylesheet" href="PortfolioStyle.css">
 </head>
-<body>
+<body class="notselectable" style="overflow:hidden">
     <!--content-->
-    <table>
-        <tr>
-            <td align="left" valign="top" style="width:20%">
-                <h1>Funbesh</h1>
+    <div id="content_container">
+        <table border="1" class="expand">
+            <tr>
+                <td id="about" align="left" valign="top" style="display:none; font-size:2.3vh; width:50%;">
+                    <h1>Funbesh</h1>
 
-                <h2>Summary:</h2>
-                <p>
-                    Modification of backgamon game. supports up to<br>
-                    6 players that can play together on lan or vlan.
-                </p>
+                    <h1>Summary:</h1>
+                    <p>
+                        <h2>
+                            Modification of backgamon game. supports up to<br>
+                            6 players that can play together on lan or vlan.
+                        </h2>
+                    </p>
 
-                <h2>Platforms:</h2>
-                <p>Android</p>
+                    <h1>Platforms:</h1>
+                    <p><h2> Android </h2></p>
 
-                <h2>Contribution:</h2>
-                <p>UI, Game logic, AI, Handmade Client/Server</p>
+                    <h1>Contribution:</h1>
+                    <p><h2> UI, Game logic, AI, Handmade Client/Server </h2></p>
 
-                <h2>Last Update:</h2>
-                <p>released beta 0.602b</p>
+                    <h1>Last Update:</h1>
+                    <p><h2> released beta 0.602b </h2></p>
 
-                <p><a href="http://funbesh.club" target="_PARENT">homepage</a></p>
-                <p><a href="https://www.facebook.com/FUNBESH/" target="_PARENT">on facebook</a></p>
-            </td>
-            <td style="width:5%">
-                <ul style="list-style-type:circle; float:left; padding:20px; border:groove; height:100%;">
-                    <li onclick="ShowDemo1()"><a href="#">Demo1</a></li>
-                    <li onclick="ShowDemo2()"><a href="#">Demo2</a></li>
-                </ul>
-            </td>
-            <td style="width:60%">
-                <img id="demo1" style="width:80%; display:block" src="https://scontent.ftlv18-1.fna.fbcdn.net/v/t39.30808-6/244261400_385569526561634_9011726388681028692_n.jpg?_nc_cat=105&ccb=1-5&_nc_sid=730e14&_nc_ohc=1ZI_7uUy2PkAX_VU-Nn&_nc_ht=scontent.ftlv18-1.fna&oh=00_AT-Y33H2nF99tvqsi7QLDhcisKGrjkf3O8Jrvn-gzt9rRA&oe=623C9880">
-                <iframe hidden id="demo2" src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FFUNBESH%2Fvideos%2F414748263565140%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
-            </td>
-        </tr>
-    </table>
+                    <a href="http://funbesh.club" target="_PARENT">homepage</a><br />
+                    <a href="https://www.facebook.com/FUNBESH/" target="_PARENT">on facebook</a>
+                </td>
+                <td>
+                    <!--<img class="demo" src="" />-->
+                    <img class="demo" src="https://scontent.ftlv18-1.fna.fbcdn.net/v/t39.30808-6/244261400_385569526561634_9011726388681028692_n.jpg?_nc_cat=105&ccb=1-5&_nc_sid=730e14&_nc_ohc=1ZI_7uUy2PkAX_VU-Nn&_nc_ht=scontent.ftlv18-1.fna&oh=00_AT-Y33H2nF99tvqsi7QLDhcisKGrjkf3O8Jrvn-gzt9rRA&oe=623C9880">
+                    <iframe class="demo" style="height:100%;" hidden src="" data-src-inactive-container="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FFUNBESH%2Fvideos%2F414748263565140%2F&show_text=false&t=0"></iframe>
+
+                </td>
+            </tr>
+        </table>
+        <div id="project_navigation_btns">
+            <button onclick="previousDemo()">Previous</button>
+            <button onclick="ShowHideAbout()">About</button>
+            <button onclick="nextDemo()">Next</button>
+        </div>
+    </div>
+
+    <!--include scripts-->
+    <script src="PortfolioCommands.js" type="text/javascript"></script>
 </body>
 </html>

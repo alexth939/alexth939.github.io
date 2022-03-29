@@ -1,0 +1,75 @@
+h1 {
+    color: #000;
+    text-shadow: 0 0 1px #fff, 0 0 10px #fff, 0 0 14px #fff, 0 0 21px #49ff18, 0 0 4px #49ff18, 0 0 3px #49ff18, 0 0 0px #49ff18, 0 0 9px #49ff18, -8px 18px 4px rgb(79 206 55 / 38%);
+}
+
+p, h2 {
+    text-shadow: 2px 2px 0 #4074b5, 2px -2px 0 #4074b5, -2px 2px 0 #4074b5, -2px -2px 0 #4074b5, 2px 0px 0 #4074b5, 0px 2px 0 #4074b5, -2px 0px 0 #4074b5, 0px -2px 0 #4074b5, -9px 6px 12px rgba(206,0,0,0.15);
+    color: #FFFFFF;
+}
+
+a {
+    color: yellow;
+}
+
+#project_navigation_btns {
+    position: absolute;
+    top: 92%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    width: 40em;
+    line-height: 5em;
+}
+
+    #project_navigation_btns button {
+        background-color: #555;
+        color: white;
+        font-size: 16px;
+        padding: 12px 24px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        text-align: center;
+        display: inline-block;
+        vertical-align: central;
+        width: 8em;
+        height: 3em;
+        bottom: 8em;
+        margin: 2em;
+    }
+
+        #project_navigation_btns button:hover {
+            background-color: black;
+            border:solid;
+        }
+
+.expand {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 90%;
+}
+
+iframe {
+    /*width: 100%;*/
+    /*height: -webkit-fill-available;*/
+    /*top: 0;*/
+    position: relative;
+}
+
+.demo{
+    border:inset;
+    width:98%;
+    /*height:98%;*/
+}
+
+.notselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}

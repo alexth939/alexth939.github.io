@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>SpiderSphere</title>
+
+    <script>
+        function ShowDemo(index) {
+            var demos = document.getElementById('demosMenu').getElementsByClassName('demo');
+            for (i = 0; i < demos.length; i++) {
+                if (i != index)
+                    demos[i].style.display = "none";
+                else
+                    demos[i].style.display = "block";
+            }
+        }
+    </script>
+</head>
+<body>
+    <!--content-->
+    <table>
+        <tr>
+            <td align="left" valign="top" style="width:20%">
+                <h1>SpiderSphere</h1>
+
+                <h2>Summary:</h2>
+                <p>
+                    Concept proof of interesting "bind to objects" mechanic
+                </p>
+
+                <h2>Platforms:</h2>
+                <p>PC</p>
+
+                <h2>Contribution:</h2>
+                <p>Model, Animation, Gameplay, Idea</p>
+
+                <h2>Last Update:</h2>
+                <p>not released</p>
+            </td>
+            <td style="width:5%">
+                <ul style="list-style-type:circle; float:left; padding:20px; border:groove; height:100%;">
+                    <li onclick="ShowDemo(0)"><a href="#">Demo1</a></li>
+                    <li onclick="ShowDemo(1)"><a href="#">Demo2</a></li>
+                    <li onclick="ShowDemo(2)"><a href="#">Demo2</a></li>
+                </ul>
+            </td>
+            <td id="demosMenu" style="width:60%">
+                <img class="demo" style="width:80%; display:block" src="../pics/SpiderSphere001.jpg">
+                <img class="demo" style="width:80%; display:block" src="../pics/SpiderSphere002.jpg">
+                <img class="demo" style="width:80%; display:block" src="../pics/SpiderSphere003.jpg">
+            </td>
+        </tr>
+    </table>
+    <script>
+        ShowDemo(0);
+    </script>
+</body>
+</html>
