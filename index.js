@@ -61,6 +61,10 @@ function closemagnify() {
     //or not auto?
 }
 
+function soon() {
+    alert("coming soon...");
+}
+
 setTimeout(function () {
     //$("#loading").addClass("animated fadeOut");
     $("#loading").css("opacity", "0");
